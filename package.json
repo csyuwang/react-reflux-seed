@@ -1,0 +1,24 @@
+{
+  "name": "react-reflux-app",
+  "version": "0.0.0",
+  "private": true,
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "dependencies": {
+    "react": "^15.0.1",
+    "react-dom": "^15.0.1",
+    "reflux": "^0.1.13"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-browserify": "^3.0.1",
+    "grunt-contrib-connect": "^1.0.1",
+    "grunt-contrib-cssmin": "^1.0.1",
+    "grunt-contrib-less": "^1.2.0",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-react": "^0.12.3",
+    "react-tools": "^0.11.2"
+  }
+}
