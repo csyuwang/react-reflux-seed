@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "name": "Football",
+    "category": 1,
+    "price": "$49.99",
+    "stocked": true
+  },
+  {
+    "id": 2,
+    "name": "Baseball",
+    "category": 1,
+    "price": "$9.99",
+    "stocked": true
+  },
+  {
+    "id": 3,
+    "name": "Basketball",
+    "category": 1,
+    "price": "$29.99",
+    "stocked": false
+  },
+  {
+    "id": 4,
+    "name": "iPod Touch",
+    "category": 2,
+    "price": "$99.99",
+    "stocked": true
+  },
+  {
+    "id": 5,
+    "name": "iPhone 5",
+    "category": 2,
+    "price": "$399.99",
+    "stocked": false
+  },
+  {
+    "id": 6,
+    "name": "Nexus 7",
+    "category": 2,
+    "price": "$199.99",
+    "stocked": true
+  },
+  {
+    "id": 7,
+    "name": "iphone 6s",
+    "category": 2,
+    "price": "$499.99",
+    "stocked": true
+  }
+]

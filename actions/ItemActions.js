@@ -6,7 +6,8 @@ var Reflux = require('reflux');
 
 var ItemActions = Reflux.createActions([
     'createItem',
-    'editItem'
+    'editItem',
+    'loadItems'
 ]);
 
 module.exports = ItemActions;

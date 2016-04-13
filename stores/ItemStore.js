@@ -5,29 +5,22 @@
 var Reflux = require('reflux');
 var ItemActions = require('../actions/ItemActions');
 
-var _items = [
-    {id:1, name: "Football", category: "Sporting Goods", price: "$49.99", stocked: true},
-    {id:2, name: "Baseball", category: "Sporting Goods", price: "$9.99", stocked: true},
-    {id:3, name: "Basketball", category: "Sporting Goods", price: "$29.99", stocked: false},
-    {id:4, name: "iPod Touch", category: "Electronics", price: "$99.99", stocked: true},
-    {id:5, name: "iPhone 5", category: "Electronics", price: "$399.99", stocked: false},
-    {id:6, name: "Nexus 7", category: "Electronics", price: "$199.99", stocked: true}
-];
-
-var _newItem = {id: undefined, name: '', category: '', price: '', stocked: ''};
+var _items = [];
+var _newItem = {};
+var _idName, _showName, _ownerName;
 
 var ItemStore = Reflux.createStore({
 
     init: function() {
         this.listenTo(ItemActions.createItem, this.onCreate);
         this.listenTo(ItemActions.editItem, this.onEdit);
+        this.listenTo(ItemActions.loadItems, this.load);
     },
 
     onCreate: function(item) {
         /*TODO save item*/
         item.id = Date.now();
         _items.push(item);
-
         this.trigger(_items);
     },
 
@@ -40,6 +33,22 @@ var ItemStore = Reflux.createStore({
                 break;
             }
         }
+    },
+
+    load: function(src) {
+        $.ajax({
+            url: src,
+            dataType: 'json',
+            cache: false,
+            success: function(items) {
+                _newItem = this.getNewItem(items[0]);
+                _items = this.transform(items);
+                this.trigger(_items);
+            }.bind(this),
+            error: function(xhr, status, err) {
+                console.error(src, status, err.toString());
+            }.bind(this)
+        });
     },
 
     getItems: function(){
@@ -55,8 +64,58 @@ var ItemStore = Reflux.createStore({
         return _newItem;
     },
 
-    getNewItem: function(){
-        return _newItem;
+    getNewItem: function(item){
+        if(item) {
+            var ret = {};
+            Object.keys(item).forEach(function(key){
+                if (key === _idName) {
+                    ret.id = undefined;
+                }
+                else if (key === _showName) {
+                    ret.name = '';
+                }
+                else if (key === _ownerName) {
+                    ret.owner = '';
+                }
+                else {
+                    ret[key] = '';
+                }
+            });
+            return ret;
+        } else {
+            return _newItem;
+        }
+    },
+
+    transform: function(items){
+        return items.map(function(item){
+            return this.convert(item);
+        }.bind(this));
+    },
+
+    convert: function(item){
+        var _item = {};
+        Object.keys(item).forEach(function(key){
+            if (key === _idName) {
+                _item.id = item[key];
+            }
+            else if (key === _showName) {
+                _item.name = item[key];
+            }
+            else if (key === _ownerName) {
+                _item.owner = item[key];
+            }
+            else {
+                _item[key] = item[key];
+            }
+        });
+        return _item;
+    },
+
+    configNames: function(idName,showName,ownerName){
+        _idName = idName;
+        _showName = showName;
+        _ownerName = ownerName;
     }
 
 });

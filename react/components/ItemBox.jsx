@@ -2,6 +2,8 @@ var React = require('react');
 var ItemListBox=require('./ItemListBox.jsx');
 var ItemDetailBox=require('./ItemDetailBox.jsx');
 
+var ItemStore = require('../../stores/ItemStore.js');
+
 var ItemBox = React.createClass({
 
     getInitialState: function(){
@@ -17,6 +19,7 @@ var ItemBox = React.createClass({
     },
 
     render: function() {
+        ItemStore.configNames(this.props.idName,this.props.showName,this.props.ownerName);
         return (
             <div className="container">
                 <div className="wrapper header">
@@ -25,7 +28,7 @@ var ItemBox = React.createClass({
                     </div>
                 </div>
                 <div className="row">
-                    <ItemListBox onEdit={this.onEdit} onAdd={this.onAdd} />
+                    <ItemListBox onEdit={this.onEdit} onAdd={this.onAdd} onSelectOwner={this.onAdd} itemSource={this.props.itemSource} ownerSource={this.props.ownerSource} />
                     <ItemDetailBox id={this.state.currentlyEdited}  />
                 </div>
             </div>
