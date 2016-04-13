@@ -109,6 +109,8 @@ module.exports = function(grunt) {
 
 
     grunt.registerTask('default', [
+        'less','cssmin',
+        'browserify','uglify',
         'connect:server',
         'watch'
     ]);

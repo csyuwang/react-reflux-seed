@@ -6681,6 +6681,285 @@ button.close {
     display: none !important;
   }
 }
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.wrapper {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.sidebar {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 1200px) {
+  .sidebar {
+    float: left;
+    width: 25%;
+  }
+}
+.content-main {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 1200px) {
+  .content-main {
+    margin-left: 8.33333333%;
+  }
+}
+@media (min-width: 1200px) {
+  .content-main {
+    float: left;
+    width: 66.66666667%;
+  }
+}
+.select-label {
+  padding: 0 15px;
+}
+.add-button {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+}
+.add-button:focus,
+.add-button:active:focus,
+.add-button.active:focus,
+.add-button.focus,
+.add-button:active.focus,
+.add-button.active.focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.add-button:hover,
+.add-button:focus,
+.add-button.focus {
+  color: #333;
+  text-decoration: none;
+}
+.add-button:active,
+.add-button.active {
+  outline: 0;
+  background-image: none;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+.add-button.disabled,
+.add-button[disabled],
+fieldset[disabled] .add-button {
+  cursor: not-allowed;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+a.add-button.disabled,
+fieldset[disabled] a.add-button {
+  pointer-events: none;
+}
+.add-button:focus,
+.add-button.focus {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #8c8c8c;
+}
+.add-button:hover {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+.add-button:active,
+.add-button.active,
+.open > .dropdown-toggle.add-button {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+.add-button:active:hover,
+.add-button.active:hover,
+.open > .dropdown-toggle.add-button:hover,
+.add-button:active:focus,
+.add-button.active:focus,
+.open > .dropdown-toggle.add-button:focus,
+.add-button:active.focus,
+.add-button.active.focus,
+.open > .dropdown-toggle.add-button.focus {
+  color: #333;
+  background-color: #d4d4d4;
+  border-color: #8c8c8c;
+}
+.add-button:active,
+.add-button.active,
+.open > .dropdown-toggle.add-button {
+  background-image: none;
+}
+.add-button.disabled,
+.add-button[disabled],
+fieldset[disabled] .add-button,
+.add-button.disabled:hover,
+.add-button[disabled]:hover,
+fieldset[disabled] .add-button:hover,
+.add-button.disabled:focus,
+.add-button[disabled]:focus,
+fieldset[disabled] .add-button:focus,
+.add-button.disabled.focus,
+.add-button[disabled].focus,
+fieldset[disabled] .add-button.focus,
+.add-button.disabled:active,
+.add-button[disabled]:active,
+fieldset[disabled] .add-button:active,
+.add-button.disabled.active,
+.add-button[disabled].active,
+fieldset[disabled] .add-button.active {
+  background-color: #fff;
+  border-color: #ccc;
+}
+.add-button .badge {
+  color: #fff;
+  background-color: #333;
+}
+.save-button {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+.save-button:focus,
+.save-button:active:focus,
+.save-button.active:focus,
+.save-button.focus,
+.save-button:active.focus,
+.save-button.active.focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.save-button:hover,
+.save-button:focus,
+.save-button.focus {
+  color: #333;
+  text-decoration: none;
+}
+.save-button:active,
+.save-button.active {
+  outline: 0;
+  background-image: none;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+.save-button.disabled,
+.save-button[disabled],
+fieldset[disabled] .save-button {
+  cursor: not-allowed;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+a.save-button.disabled,
+fieldset[disabled] a.save-button {
+  pointer-events: none;
+}
+.save-button:focus,
+.save-button.focus {
+  color: #fff;
+  background-color: #449d44;
+  border-color: #255625;
+}
+.save-button:hover {
+  color: #fff;
+  background-color: #449d44;
+  border-color: #398439;
+}
+.save-button:active,
+.save-button.active,
+.open > .dropdown-toggle.save-button {
+  color: #fff;
+  background-color: #449d44;
+  border-color: #398439;
+}
+.save-button:active:hover,
+.save-button.active:hover,
+.open > .dropdown-toggle.save-button:hover,
+.save-button:active:focus,
+.save-button.active:focus,
+.open > .dropdown-toggle.save-button:focus,
+.save-button:active.focus,
+.save-button.active.focus,
+.open > .dropdown-toggle.save-button.focus {
+  color: #fff;
+  background-color: #398439;
+  border-color: #255625;
+}
+.save-button:active,
+.save-button.active,
+.open > .dropdown-toggle.save-button {
+  background-image: none;
+}
+.save-button.disabled,
+.save-button[disabled],
+fieldset[disabled] .save-button,
+.save-button.disabled:hover,
+.save-button[disabled]:hover,
+fieldset[disabled] .save-button:hover,
+.save-button.disabled:focus,
+.save-button[disabled]:focus,
+fieldset[disabled] .save-button:focus,
+.save-button.disabled.focus,
+.save-button[disabled].focus,
+fieldset[disabled] .save-button.focus,
+.save-button.disabled:active,
+.save-button[disabled]:active,
+fieldset[disabled] .save-button:active,
+.save-button.disabled.active,
+.save-button[disabled].active,
+fieldset[disabled] .save-button.active {
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+.save-button .badge {
+  color: #5cb85c;
+  background-color: #fff;
+}
 .item {
   position: relative;
   display: block;
@@ -6739,9 +7018,28 @@ button.close {
 .item.active:focus .list-group-item-text {
   color: #c7ddef;
 }
+.item:hover {
+  text-decoration: none;
+}
+.item:link {
+  text-decoration: none;
+}
 .item-list {
   margin-bottom: 20px;
   padding-left: 0;
+  padding: 15px 0 0;
+}
+.content-details {
+  border: solid 1px #428bca;
+  min-height: 450px;
+  padding: 40px;
+  margin-bottom: 20px;
+}
+.centered {
+  text-align: center;
+}
+.right-align {
+  text-align: right;
 }
 .clearfix:before,
 .clearfix:after,
@@ -6772,7 +7070,9 @@ button.close {
 .panel-body:before,
 .panel-body:after,
 .modal-footer:before,
-.modal-footer:after {
+.modal-footer:after,
+.wrapper:before,
+.wrapper:after {
   content: " ";
   display: table;
 }
@@ -6790,7 +7090,8 @@ button.close {
 .navbar-collapse:after,
 .pager:after,
 .panel-body:after,
-.modal-footer:after {
+.modal-footer:after,
+.wrapper:after {
   clear: both;
 }
 .center-block {
